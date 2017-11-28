@@ -1,15 +1,17 @@
 (function(){
     window.onload = function(){
-        var d = new Date();
-        var currentMs = d.getTime();
-        var startTime = 1511848179984;
-        var timeDiff = parseInt((currentMs - startTime) / 60000)
-        var newNum = parseFloat(33645) + parseFloat((timeDiff * 0.037).toFixed(2))
-        document.getElementById("moneyTimer").innerHTML = "$" + newNum;
-        console.log(timeDiff);
-        console.log(newNum);
+        function doThing() {
+            var d = new Date();
+            var currentMs = d.getTime();
+            var startTime = 1511848179984;
+            var timeDiff = parseInt((currentMs - startTime) / 60000)
+            var newNum = parseFloat(33645) + parseFloat((timeDiff * 0.037).toFixed(2))
+            document.getElementById("moneyTimer").innerHTML = "$" + newNum;
+            console.log("yea");
+        }
 
-
+        doThing();
+        setInterval(doThing, 30000);
         
         particlesJS('particles-js',
                     {
