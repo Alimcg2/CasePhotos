@@ -1,21 +1,12 @@
 (function(){
     window.onload = function(){
-        
-        var request = new XMLHttpRequest();
-        request.open("GET", "https://alimcg2.github.io/CasePhotos/testing.html");
-        request.onload = handleTHIS;
-        request.onerror = function(){
-            console.log("ooops");
-        }
-        request.send();
-
-        function handleTHIS(){
-            var time =  parseFloat(this.responseText);
-            setInterval(function(){
-                time  = time + .037;
-                document.getElementById("moneyTimer").innerHTML = time;
-            }, 1000);
-        }
-        
+        var d = new Date();
+        var currentMs = d.getTime();
+        var startTime = 1511848179984;
+        var timeDiff = parseInt((currentMs - startTime) / 60000)
+        var newNum = 33645 + (timeDiff * 0.037)
+        console.log(timeDiff);
+        console.log(newNum);
+        document.getElementById("moneyTimer").innerHTML = "$" + newNum;
     }
 }());
