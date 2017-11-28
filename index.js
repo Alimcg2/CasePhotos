@@ -2,7 +2,7 @@
     window.onload = function(){
         
         var request = new XMLHttpRequest();
-        request.open("GET", "http://127.0.0.1:5000/");
+        request.open("GET", "https://alimcg2.github.io/CasePhotos/testing.html");
         request.onload = function(){
             console.log("HI");
             console.log(this.responseText);
